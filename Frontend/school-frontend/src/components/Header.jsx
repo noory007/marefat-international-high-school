@@ -1,30 +1,33 @@
 // src/components/Header.jsx
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
-    <header className="bg-red-700 text-white flex justify-between items-center px-6 py-4">
+    <header className="bg-red-700 text-white flex justify-between items-center px-6 py-4 sticky top-0 z-50">
       <h1 className="text-3xl font-serif font-bold tracking-wide hover:cursor-pointer">
-        MAREFAT
+        <Link to="/" className="hover:text-gray-200">
+          MAREFAT
+        </Link>
       </h1>
-
       <nav className="flex items-center space-x-6 text-sm uppercase font-medium">
-        <a href="#" className="hover:text-gray-200">
+        <Link to="/about" className="hover:text-gray-200">
           About
-        </a>
-        <a href="#" className="hover:text-gray-200">
+        </Link>
+        <Link to="/experience" className="hover:text-gray-200">
           Experience Marefat
-        </a>
-        <a href="#" className="hover:text-gray-200">
+        </Link>
+        <Link to="/admission" className="hover:text-gray-200">
           Admission
-        </a>
-        <a href="#" className="hover:text-gray-200">
+        </Link>
+        <Link to="/latest" className="hover:text-gray-200">
           The Latest
-        </a>
-        <a href="#" className="hover:text-gray-200">
+        </Link>
+        <Link to="/alumnae" className="hover:text-gray-200">
           Alumnae
-        </a>
-        <a href="#" className="hover:text-gray-200">
+        </Link>
+        <Link to="/giving" className="hover:text-gray-200">
           Giving
-        </a>
+        </Link>
         <span className="ml-4 hover:cursor-pointer">👤</span>
         <span className="ml-4 hover:cursor-pointer">🔍</span>
       </nav>

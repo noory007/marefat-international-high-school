@@ -1,13 +1,24 @@
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
+import Hero from "./components/Hero"; // or Home page component
+import About from "./pages/About";
+import ExperienceMarefat from "./pages/ExperienceMarefat";
+import Admission from "./pages/Admission"; // Import the Admission page
 
-function App() {
+// import other pages as needed
+
+export default function App() {
   return (
-    <div>
+    <Router>
       <Header />
-      <Hero />
-    </div>
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/experience" element={<ExperienceMarefat />} />
+        <Route path="/admission" element={<Admission />} />
+        {/* Add other routes here */}
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
