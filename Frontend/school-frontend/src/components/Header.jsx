@@ -22,8 +22,8 @@ export default function Header() {
         <Link to="/latest" className="hover:text-gray-200">
           The Latest
         </Link>
-        <Link to="/alumnae" className="hover:text-gray-200">
-          Alumnae
+        <Link to="/alumni" className="hover:text-gray-200">
+          Alumni
         </Link>
         <Link to="/giving" className="hover:text-gray-200">
           Giving

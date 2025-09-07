@@ -6,7 +6,7 @@ import About from "./pages/About";
 import ExperienceMarefat from "./pages/ExperienceMarefat";
 import Admission from "./pages/Admission"; // Import the Admission page
 import TheLatest from "./pages/TheLatest"; // Import TheLatest page
-import Alumnae from "./pages/Alumnae"; // Import the Alumnae page
+import Alumni from "./pages/Alumni"; // Import the Alumni page
 
 // import other pages as needed
 
@@ -20,7 +20,7 @@ export default function App() {
         <Route path="/experience" element={<ExperienceMarefat />} />
         <Route path="/admission" element={<Admission />} />
         <Route path="/latest" element={<TheLatest />} />
-        <Route path="/alumnae" element={<Alumnae />} />
+        <Route path="/alumni" element={<Alumni />} />
         {/* Add other routes here */}
       </Routes>
     </Router>

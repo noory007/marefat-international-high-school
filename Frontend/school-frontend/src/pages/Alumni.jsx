@@ -1,17 +1,17 @@
-// src/pages/Alumnae.jsx
+// src/pages/Alumni.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import heroImage from "../assets/images/Alumnae.png";
+import heroImage from "../assets/images/Alumni.png";
 
-export default function Alumnae() {
+export default function Alumni() {
   const navigate = useNavigate();
   const [active, setActive] = useState(null);
 
   const items = [
-    "Alumnae Association",
-    "Alumnae Stories",
-    "Alumnae Events",
-    "Alumnae Awards",
+    "Alumni Association",
+    "Alumni Stories",
+    "Alumni Events",
+    "Alumni Awards",
     "Directory & Networking",
   ];
 
@@ -22,7 +22,7 @@ export default function Alumnae() {
         {/* Make the image fill the entire column */}
         <img
           src={heroImage}
-          alt="Alumnae"
+          alt="Alumni"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30" />
@@ -30,7 +30,7 @@ export default function Alumnae() {
         {/* Title */}
         <div className="absolute top-10 md:top-12 left-8">
           <h1 className="text-5xl md:text-6xl font-serif text-white leading-tight">
-            ALUMNAE
+            ALUMNI
           </h1>
           <div className="mt-3 h-1 w-44 bg-red-700" />
         </div>
