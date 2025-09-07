@@ -2,11 +2,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero"; // or Home page component
-import About from "./pages/About";
+import About from "./pages/About/About";
 import ExperienceMarefat from "./pages/ExperienceMarefat";
-import Admission from "./pages/Admission"; // Import the Admission page
+import Admission from "./pages/Admission/Admission"; // Import the Admission page
 import TheLatest from "./pages/TheLatest"; // Import TheLatest page
-import Alumni from "./pages/Alumni"; // Import the Alumni page
+import Alumni from "./pages/Alumni/Alumni"; // Import the Alumni page
 
 // import other pages as needed
 
