@@ -1,5 +1,6 @@
-import { useMemo } from "react";
-import { useNavigate, useLocation, Outlet, Link } from "react-router-dom";
+// src/pages/About/About.jsx
+import { useMemo, useState, useEffect } from "react";
+import { useNavigate, useLocation, Outlet } from "react-router-dom";
 import heroImage from "../../assets/images/About-Hero.png";
 
 export default function About() {
@@ -18,20 +19,43 @@ export default function About() {
     "Diversity, Equity, Inclusion & Antiracism",
   ];
 
-  const slugs = ["welcome", "people", "mission"];
+  // Map each menu item to a slug if it has a real route; otherwise null.
+  // Order MUST match menuItems.
+  const itemSlugs = [
+    "welcome", // Welcome to Marefat
+    "people", // Our People
+    "mission", // Our Mission
+    null, // History & Traditions (no route)
+    null, // Virtual Tour (no route)
+    null, // Faculty & Staff Directory (no route)
+    null, // Strategic Vision (no route)
+    null, // Marefat at a Glance (no route)
+    null, // DEI (no route)
+  ];
 
-  const activeIndex = useMemo(() => {
-    const idx = slugs.findIndex((s) =>
-      s === "welcome" ? false : location.pathname.startsWith(`/about/${s}`)
+  // Local selection for non-routed items
+  const [localActive, setLocalActive] = useState(null);
+
+  // If the URL moves to a real nested route, clear the local highlight
+  useEffect(() => {
+    const onARealRoute = itemSlugs.some(
+      (slug) => slug && location.pathname.startsWith(`/about/${slug}`)
     );
-    return idx === -1 ? null : idx;
+    if (onARealRoute) setLocalActive(null);
   }, [location.pathname]);
 
+  // Only used to decide if hero is shown on the left
   const isOnAboutRoot = location.pathname === "/about";
 
   const handleClick = (index) => {
-    if (slugs[index] === "welcome") navigate("/about/welcome");
-    else navigate(slugs[index]);
+    const slug = itemSlugs[index];
+    if (slug) {
+      // Navigate to the real nested page
+      navigate(`/about/${slug}`);
+    } else {
+      // Just highlight locally without navigating
+      setLocalActive(index);
+    }
   };
 
   return (
@@ -67,20 +91,26 @@ export default function About() {
         </button>
 
         <ul className="space-y-3 text-lg">
-          {menuItems.map((item, index) => (
-            <li
-              key={index}
-              onClick={() => handleClick(index)}
-              className={`cursor-pointer select-none transition-colors
-                ${
-                  activeIndex === index
+          {menuItems.map((item, index) => {
+            const slug = itemSlugs[index];
+            const isActive = slug
+              ? location.pathname.startsWith(`/about/${slug}`)
+              : localActive === index;
+
+            return (
+              <li
+                key={index}
+                onClick={() => handleClick(index)}
+                className={`cursor-pointer select-none transition-colors ${
+                  isActive
                     ? "text-red-700 font-semibold"
                     : "text-gray-800 hover:text-red-400"
                 }`}
-            >
-              {item}
-            </li>
-          ))}
+              >
+                {item}
+              </li>
+            );
+          })}
         </ul>
       </aside>
     </section>
