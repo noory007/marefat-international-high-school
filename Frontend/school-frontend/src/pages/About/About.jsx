@@ -18,17 +18,7 @@ export default function About() {
     "Diversity, Equity, Inclusion & Antiracism",
   ];
 
-  const slugs = [
-    "welcome",
-    "people",
-    "mission",
-    "history-traditions",
-    "virtual-tour",
-    "directory",
-    "vision",
-    "glance",
-    "dei",
-  ];
+  const slugs = ["welcome", "people", "mission"];
 
   const activeIndex = useMemo(() => {
     const idx = slugs.findIndex((s) =>
