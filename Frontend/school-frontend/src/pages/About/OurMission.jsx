@@ -1,11 +1,12 @@
 // src/pages/About/OurMission.jsx
 import { useEffect, useRef, useState } from "react";
 import heroImage from "../../assets/images/OurMission.png";
+import secondImage from "../../assets/images/OurMission-SecondPage.png"; // second image
 
 export default function OurMission() {
   const schoolName = "MAREFAT INTERNATIONAL SCHOOL";
 
-  // ⬇️ Added two more lines; feel free to tweak wording
+  // ===== FIRST (HERO) LINES =====
   const missionLines = [
     "The Marefat International School challenges",
     "students of adventurous intellect and",
@@ -16,8 +17,17 @@ export default function OurMission() {
     "and to contribute responsibly to their communities.",
   ];
 
-  const NAV_H = 72; // update if your navbar height differs
+  // ===== SECOND (COMMUNITY) LINES =====
+  const communityLines = [
+    "The Marefat community cultivates the",
+    "joy of lasting friendships, the confidence",
+    "to pursue one’s ambitions and a",
+    "commitment to the greater good.",
+  ];
 
+  const NAV_H = 72; // header height
+
+  // ---------- HERO SCROLL DRIVER (unchanged logic) ----------
   const driverRef = useRef(null);
   const [vh, setVh] = useState(() => window.innerHeight);
   const heroH = Math.max(200, vh - NAV_H);
@@ -70,6 +80,39 @@ export default function OurMission() {
 
   const grayscaleOn = bannerT > 0.9 || showStatement;
 
+  // ---------- SECOND SECTION VISIBILITY ----------
+  const secondRef = useRef(null);
+  const [secondActive, setSecondActive] = useState(false);
+  const [revealCount2, setRevealCount2] = useState(0);
+
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        setSecondActive(entry.isIntersecting);
+      },
+      { threshold: 0.35 } // when ~35% of the section is visible
+    );
+    if (secondRef.current) obs.observe(secondRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!secondActive) {
+      setRevealCount2(0);
+      return;
+    }
+    // reveal community lines in sequence (like the first section)
+    const n = communityLines.length;
+    let i = 0;
+    const tick = () => {
+      i += 1;
+      setRevealCount2((prev) => Math.min(n, Math.max(prev, i)));
+      if (i < n) timer = setTimeout(tick, 120); // speed between lines
+    };
+    let timer = setTimeout(tick, 80);
+    return () => clearTimeout(timer);
+  }, [secondActive, communityLines.length]);
+
   return (
     <main className="w-full">
       {/* ===== STICKY HERO ===== */}
@@ -90,7 +133,7 @@ export default function OurMission() {
         />
         <div className="pointer-events-none absolute inset-0 z-20 border-[8px] border-black" />
 
-        {/* ===== WHITE STATEMENT (no underline) ===== */}
+        {/* statement */}
         <div
           className={
             "absolute inset-0 z-50 flex items-center justify-center px-6 transition-opacity duration-500 " +
@@ -98,14 +141,13 @@ export default function OurMission() {
           }
         >
           <div className="max-w-[1200px] text-center text-white">
-            {/* Top ornament */}
+            {/* ornament */}
             <div className="flex justify-center items-center mb-6">
               <span className="h-[3px] w-28 bg-white/40" />
               <span className="mx-3 w-3 h-3 rotate-45 bg-white/40" />
               <span className="h-[3px] w-28 bg-white/40" />
             </div>
 
-            {/* Lines (underline removed) */}
             <div className="font-serif leading-tight tracking-wide space-y-3">
               {missionLines.map((line, i) => {
                 const visible = i < revealCount;
@@ -129,7 +171,6 @@ export default function OurMission() {
               })}
             </div>
 
-            {/* Bottom ornament */}
             <div className="flex justify-center items-center mt-6">
               <span className="h-[3px] w-28 bg-white/40" />
               <span className="mx-3 w-3 h-3 rotate-45 bg-white/40" />
@@ -138,7 +179,7 @@ export default function OurMission() {
           </div>
         </div>
 
-        {/* ===== RED BANNER (slides up and hides under nav) ===== */}
+        {/* red banner */}
         <div
           className="absolute left-1/2 top-1/2 z-40 w-full px-4"
           style={{
@@ -169,12 +210,92 @@ export default function OurMission() {
         </div>
       </section>
 
-      {/* Driver for scroll-controlled animation length */}
+      {/* drive scroll length */}
       <section
         ref={driverRef}
         className="bg-white"
         style={{ height: `${missionLines.length * 65}vh` }}
       />
+
+      {/* ===== SECOND FULL-BLEED PHOTO + TEXT (same style) ===== */}
+      <section
+        ref={secondRef}
+        className="relative w-full overflow-hidden"
+        style={{
+          height: `calc(100vh - ${NAV_H}px)`, // full screen minus header
+          marginTop: NAV_H, // sits directly under the fixed header
+        }}
+      >
+        {/* image */}
+        <img
+          src={secondImage}
+          alt="Community at Marefat International School"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
+
+        {/* wash + grayscale when active */}
+        <div
+          className={
+            "absolute inset-0 z-10 transition-all duration-700 " +
+            (secondActive ? "grayscale bg-white/55" : "grayscale-0 bg-white/0")
+          }
+        />
+
+        {/* white frame hugging edges */}
+        <div className="pointer-events-none absolute inset-0 z-20 border-[8px] md:border-[12px] border-white" />
+
+        {/* big statement overlay */}
+        <div className="relative z-30 flex items-center justify-center h-full px-6">
+          <div className="max-w-[1200px] text-center">
+            {/* top ornament (red like screenshot) */}
+            <div
+              className={
+                "flex justify-center items-center mb-6 transition-opacity duration-700 " +
+                (secondActive ? "opacity-100" : "opacity-0")
+              }
+            >
+              <span className="h-[3px] w-24 bg-red-700/70" />
+              <span className="mx-3 w-3 h-3 rotate-45 bg-red-700/70" />
+              <span className="h-[3px] w-24 bg-red-700/70" />
+            </div>
+
+            <div className="font-serif text-gray-900 leading-tight tracking-tight space-y-3">
+              {communityLines.map((line, i) => {
+                const visible = secondActive && i < revealCount2;
+                return (
+                  <div
+                    key={i}
+                    className={
+                      "transition-all duration-400 will-change-transform " +
+                      (visible
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-3")
+                    }
+                    style={{
+                      transitionDelay: visible ? `${i * 80}ms` : "0ms",
+                      fontSize: "clamp(1.6rem, 3.0vw + 1rem, 64px)",
+                    }}
+                  >
+                    {line}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* bottom ornament */}
+            <div
+              className={
+                "flex justify-center items-center mt-8 transition-opacity duration-700 " +
+                (secondActive ? "opacity-100" : "opacity-0")
+              }
+            >
+              <span className="h-[3px] w-24 bg-red-700/70" />
+              <span className="mx-3 w-3 h-3 rotate-45 bg-red-700/70" />
+              <span className="h-[3px] w-24 bg-red-700/70" />
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
