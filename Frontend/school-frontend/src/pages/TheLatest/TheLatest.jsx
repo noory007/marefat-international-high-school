@@ -1,7 +1,7 @@
 // src/pages/TheLatest.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import latestImage from "../assets/images/Latest.png";
+import latestImage from "../../assets/images/Latest.png";
 
 export default function TheLatest() {
   const navigate = useNavigate();

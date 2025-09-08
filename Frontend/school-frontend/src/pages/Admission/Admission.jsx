@@ -1,7 +1,7 @@
 // src/pages/Admission.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import admissionImage from "../assets/images/Admission.png"; // <- rename if needed
+import admissionImage from "../../assets/images/Admission.png"; // <- rename if needed
 
 export default function Admission() {
   const navigate = useNavigate();

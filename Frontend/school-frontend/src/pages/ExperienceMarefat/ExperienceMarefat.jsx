@@ -1,7 +1,7 @@
 // src/pages/ExperienceMarefat.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import heroImage from "../assets/images/Experience-Marefat.png"; // make sure the file name matches
+import heroImage from "../../assets/images/Experience-Marefat.png"; // make sure the file name matches
 
 export default function ExperienceMarefat() {
   const navigate = useNavigate();

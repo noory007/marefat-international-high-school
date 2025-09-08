@@ -1,7 +1,7 @@
 // src/pages/Alumni.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import heroImage from "../assets/images/Alumni.png";
+import heroImage from "../../assets/images/Alumni.png";
 
 export default function Alumni() {
   const navigate = useNavigate();

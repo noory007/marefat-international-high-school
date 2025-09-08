@@ -1,14 +1,14 @@
-// src/App.jsx
+// src/App.jsx (minimal to avoid missing files)
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Hero from "./components/Hero"; // or Home page component
+import Hero from "./components/Hero";
 import About from "./pages/About/About";
-import ExperienceMarefat from "./pages/ExperienceMarefat";
-import Admission from "./pages/Admission/Admission"; // Import the Admission page
-import TheLatest from "./pages/TheLatest"; // Import TheLatest page
-import Alumni from "./pages/Alumni/Alumni"; // Import the Alumni page
-
-// import other pages as needed
+import Welcome from "./pages/About/Welcome";
+import OurPeople from "./pages/About/OurPeople"; // add this
+import ExperienceMarefat from "./pages/ExperienceMarefat/ExperienceMarefat";
+import Admission from "./pages/Admission/Admission";
+import TheLatest from "./pages/TheLatest/TheLatest";
+import Alumni from "./pages/Alumni/Alumni";
 
 export default function App() {
   return (
@@ -17,11 +17,12 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/about" element={<About />} />
+        <Route path="/about/welcome" element={<Welcome />} />
+        <Route path="/about/people" element={<OurPeople />} />
         <Route path="/experience" element={<ExperienceMarefat />} />
         <Route path="/admission" element={<Admission />} />
         <Route path="/latest" element={<TheLatest />} />
         <Route path="/alumni" element={<Alumni />} />
-        {/* Add other routes here */}
       </Routes>
     </Router>
   );
