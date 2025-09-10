@@ -1,5 +1,9 @@
-// src/App.jsx
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 
@@ -21,12 +25,16 @@ import AdmissionWelcome from "./pages/Admission/Welcome";
 import ApplyLower from "./pages/Admission/ApplyLower";
 import ApplyMiddle from "./pages/Admission/ApplyMiddle";
 import ApplyUpper from "./pages/Admission/ApplyUpper";
-//import Tuition from "./pages/Admission/Tuition";
-//import Events from "./pages/Admission/Events";
-//import Faq from "./pages/Admission/Faq";
 
-// Other top-level pages
+// The Latest (make sure these paths exist exactly)
 import TheLatest from "./pages/TheLatest/TheLatest";
+import News from "./pages/TheLatest/News";
+import Bulletin from "./pages/TheLatest/Bulletin";
+import Calendar from "./pages/TheLatest/Calendar";
+import AdmissionEvents from "./pages/TheLatest/AdmissionEvents";
+//import AlumniEvents from "./pages/TheLatest/AlumniEvents";
+
+// Other
 import Alumni from "./pages/Alumni/Alumni";
 
 export default function App() {
@@ -57,18 +65,27 @@ export default function App() {
           element={<UpperSchool />}
         />
 
-        {/* Admission (top + nested pages) */}
+        {/* Admission */}
         <Route path="/admission" element={<Admission />} />
         <Route path="/admission/welcome" element={<AdmissionWelcome />} />
         <Route path="/admission/apply/lower" element={<ApplyLower />} />
         <Route path="/admission/apply/middle" element={<ApplyMiddle />} />
         <Route path="/admission/apply/upper" element={<ApplyUpper />} />
-        {/* <Route path="/admission/tuition" element={<Tuition />} />
-        <Route path="/admission/events" element={<Events />} />
-        <Route path="/admission/faq" element={<Faq />} /> */}
 
-        {/* Other top-level pages */}
+        {/* The Latest */}
         <Route path="/latest" element={<TheLatest />} />
+        <Route path="/latest/news" element={<News />} />
+        <Route path="/latest/bulletin" element={<Bulletin />} />
+        <Route path="/latest/calendar" element={<Calendar />} />
+        <Route path="/latest/admission-events" element={<AdmissionEvents />} />
+        {/* <Route path="/latest/alumni-events" element={<AlumniEvents />} /> */}
+        {/* If you ever had the old alumnae path, keep a redirect */}
+        <Route
+          path="/latest/alumnae-events"
+          element={<Navigate to="/latest/alumni-events" replace />}
+        />
+
+        {/* Other */}
         <Route path="/alumni" element={<Alumni />} />
       </Routes>
     </Router>
