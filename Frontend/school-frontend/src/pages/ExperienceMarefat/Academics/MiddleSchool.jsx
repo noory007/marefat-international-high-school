@@ -1,11 +1,10 @@
 // src/pages/ExperienceMarefat/Academics/MiddleSchool.jsx
-import l1 from "../../../assets/images/Experience-Marefat-L1.png";
-import l2 from "../../../assets/images/Experience-Marefat-L2.png";
-import l3 from "../../../assets/images/Experience-Marefat-L3.png";
-import l4 from "../../../assets/images/Experience-Marefat-L4.png";
+import m1 from "../../../assets/images/Experience-Marefat-M1.png";
+import m2 from "../../../assets/images/Experience-Marefat-M2.png";
+import m3 from "../../../assets/images/Experience-Marefat-M3.png";
+import m4 from "../../../assets/images/Experience-Marefat-M4.png";
 
 import TimBrownell from "../../../assets/images/Tim-Brownell.png";
-
 import m5 from "../../../assets/images/Experience-Marefat-M5.png";
 import m6 from "../../../assets/images/Experience-Marefat-M6.png";
 import m7 from "../../../assets/images/Experience-Marefat-M7.png";
@@ -14,12 +13,9 @@ import m8 from "../../../assets/images/Experience-Marefat-M8.png";
 export default function MiddleSchool() {
   return (
     <main className="w-full bg-white">
-      {/* ===== Collage hero ===== */}
+      {/* ==================== Collage hero (uses M1–M4) ==================== */}
       <section className="relative w-full overflow-hidden">
-        {/* Outer frame */}
         <div className="pointer-events-none absolute inset-0 border-[8px] border-black z-20" />
-
-        {/* Mosaic */}
         <div
           className="
             grid gap-4
@@ -32,7 +28,7 @@ export default function MiddleSchool() {
           {/* Left tall */}
           <div className="relative md:row-span-2">
             <img
-              src={l2}
+              src={m2}
               alt="Middle School — left"
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -41,25 +37,25 @@ export default function MiddleSchool() {
           {/* Middle top */}
           <div className="relative">
             <img
-              src={l1}
+              src={m1}
               alt="Middle School — center"
               className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
 
-          {/* Right tall */}
+          {/* Right tall (now M3) */}
           <div className="relative md:row-span-2">
             <img
-              src={l4}
+              src={m3}
               alt="Middle School — right"
               className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
 
-          {/* Bottom wide */}
+          {/* Bottom wide (now M4) */}
           <div className="relative md:col-span-3 md:row-span-2">
             <img
-              src={l3}
+              src={m4}
               alt="Middle School — bottom"
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -79,7 +75,6 @@ export default function MiddleSchool() {
             shadow-xl outline outline-1 outline-black/10
           "
         >
-          {/* top ornament */}
           <div className="flex justify-center items-center mb-6">
             <span className="h-[3px] w-24 md:w-28 bg-[#cc2630]" />
             <span className="mx-3 w-3 h-3 rotate-45 bg-[#cc2630]" />
@@ -90,7 +85,6 @@ export default function MiddleSchool() {
             MIDDLE SCHOOL
           </h1>
 
-          {/* bottom ornament */}
           <div className="flex justify-center items-center mt-6">
             <span className="h-[3px] w-24 md:w-28 bg-[#cc2630]" />
             <span className="mx-3 w-3 h-3 rotate-45 bg-[#cc2630]" />
@@ -99,10 +93,9 @@ export default function MiddleSchool() {
         </div>
       </section>
 
-      {/* ===== Content + Red Quote (Tim Brownell) ===== */}
+      {/* ==================== Red quote block ==================== */}
       <section className="w-full bg-white py-16 md:py-24">
         <div className="mx-auto max-w-[1200px] px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10">
-          {/* Left narrative */}
           <div className="lg:col-span-7 lg:pr-10 lg:border-r lg:border-gray-300">
             <div className="space-y-8 text-[18px] leading-8 text-gray-800">
               <p>
@@ -113,7 +106,6 @@ export default function MiddleSchool() {
                 to develop a sense of her unique strengths as she masters
                 complex new intellectual, emotional, social and physical skills.
               </p>
-
               <p>
                 We believe that Middle School should be a time of spontaneity
                 and exuberance, encountering adversity and exploring avenues to
@@ -122,7 +114,6 @@ export default function MiddleSchool() {
                 with new and old friends, and instilling a deep and unquenchable
                 love of learning.
               </p>
-
               <p>
                 Our Middle School program embraces a student’s freedom to ask
                 questions and not always have the answer, to experience the
@@ -134,7 +125,6 @@ export default function MiddleSchool() {
             </div>
           </div>
 
-          {/* Right: big red quote */}
           <div className="lg:col-span-5">
             <div className="p-0 md:pl-8">
               <p className="font-serif text-red-700 text-[40px] md:text-[56px] leading-tight">
@@ -162,19 +152,16 @@ export default function MiddleSchool() {
         </div>
       </section>
 
-      {/* ===== An Education for the Future, Grounded in Tradition (M5) ===== */}
+      {/* ==================== Education / Tradition ==================== */}
       <section className="w-full bg-white pb-16 md:pb-24">
         <div className="mx-auto max-w-[1200px] px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Left panel */}
           <div className="lg:col-span-6 bg-gray-100 px-8 md:px-12 py-12 md:py-16">
             <h2 className="font-serif text-[30px] md:text-[40px] leading-tight text-gray-900">
               An Education for the
               <br className="hidden md:block" /> Future, Grounded in
               <br className="hidden md:block" /> Tradition
             </h2>
-
             <div className="mt-6 h-[3px] w-40 bg-red-600" />
-
             <div className="mt-8 text-[18px] leading-8 text-gray-800 space-y-6">
               <p>
                 During Middle School, students transition from the playfulness
@@ -191,39 +178,33 @@ export default function MiddleSchool() {
             </div>
           </div>
 
-          {/* Right full image (tall to match text) */}
-          <div className="lg:col-span-6 relative min-h-[520px] md:min-h-[600px]">
+          <div className="lg:col-span-6 relative">
             <img
               src={m5}
               alt="Middle School classroom"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="w-full h-full object-cover min-h-[420px]"
             />
           </div>
         </div>
       </section>
 
-      {/* ===== Speaking Your Mind; Finding Your Voice (M6) ===== */}
-      <section className="w-full bg-white pb-16 md:pb-24">
-        <div className="mx-auto max-w-[1200px] px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Left: image */}
-          <div className="lg:col-span-6 relative min-h-[420px] md:min-h-[560px]">
+      {/* ==================== Speaking Your Mind ==================== */}
+      <section className="w-full bg-white py-14 md:py-20">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-6">
             <img
               src={m6}
               alt="Speaking your mind"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="w-full h-full object-cover min-h-[420px]"
             />
           </div>
-
-          {/* Right: text */}
-          <div className="lg:col-span-6 flex flex-col justify-center">
-            <h2 className="font-serif text-[30px] md:text-[40px] leading-tight text-gray-900">
-              Speaking Your Mind;
-              <br className="hidden md:block" /> Finding Your Voice
-            </h2>
-            <div className="mt-6 h-[3px] w-40 bg-red-600" />
-
-            <div className="mt-8 text-[18px] leading-8 text-gray-800 space-y-6">
-              <p>
+          <div className="lg:col-span-6 flex items-center">
+            <div>
+              <h2 className="font-serif text-[34px] md:text-[44px] leading-tight text-gray-900">
+                Speaking Your Mind; <br /> Finding Your Voice
+              </h2>
+              <div className="mt-4 h-[3px] w-44 bg-red-600" />
+              <p className="mt-8 text-[18px] leading-8 text-gray-800">
                 Middle School is a time for students to find inner confidence,
                 develop their own point of view and learn to express themselves
                 in a thoughtful and respectful manner. From weekly community
@@ -238,81 +219,172 @@ export default function MiddleSchool() {
         </div>
       </section>
 
-      {/* ===== Unplugging to Connect (M7) ===== */}
-      <section className="w-full bg-white pb-16 md:pb-24">
-        <div className="mx-auto max-w-[1200px] px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Left: text */}
-          <div className="lg:col-span-6 flex flex-col justify-center">
-            <h2 className="font-serif text-[30px] md:text-[40px] leading-tight text-gray-900">
+      {/* ==================== Unplugging to Connect ==================== */}
+      <section className="w-full bg-white py-14 md:py-20">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-6">
+            <h2 className="font-serif text-[34px] md:text-[44px] leading-tight text-gray-900">
               Unplugging to Connect
             </h2>
-            <div className="mt-6 h-[3px] w-40 bg-red-600" />
-
-            <div className="mt-8 text-[18px] leading-8 text-gray-800 space-y-6">
-              <p>
-                In Middle School we choose to use technology deliberately,
-                maximizing its benefits while minimizing the opportunities for
-                its distractions. Students are taught how to be good digital
-                citizens while navigating the pitfalls and promises of social
-                media, and they are provided multiple opportunities to take a
-                break from technology during the school day and even at home. In
-                our widely popular Digital Fresh Start program, students pledge
-                to put down their phones and limit their exposure to social
-                media. Parents are given tools to support their daughters when
-                they choose to do a digital detox, as part of a division-wide
-                initiative on improving mental health.
-              </p>
-            </div>
+            <div className="mt-4 h-[3px] w-40 bg-red-600" />
+            <p className="mt-8 text-[18px] leading-8 text-gray-800">
+              In Middle School we choose to use technology deliberately,
+              maximizing its benefits while minimizing the opportunities for its
+              distractions. Students are taught how to be good digital citizens
+              while navigating the pitfalls and promises of social media, and
+              they are provided multiple opportunities to take a break from
+              technology during the school day and even at home. In our widely
+              popular Digital Fresh Start program, students pledge to put down
+              their phones and limit exposure to social media; families are
+              given tools to support a “digital detox” as part of a
+              division-wide initiative on improving mental health.
+            </p>
           </div>
-
-          {/* Right: image */}
-          <div className="lg:col-span-6 relative min-h-[420px] md:min-h-[560px]">
+          <div className="lg:col-span-6">
             <img
               src={m7}
-              alt="Phones boxed for a digital detox"
-              className="absolute inset-0 w-full h-full object-cover"
+              alt="Unplug to connect"
+              className="w-full h-full object-cover min-h-[420px]"
             />
           </div>
         </div>
       </section>
 
-      {/* ===== A Community Where Everyone Belongs (M8) ===== */}
-      <section className="w-full bg-white pb-16 md:pb-24">
-        <div className="mx-auto max-w-[1200px] px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Left: large image */}
-          <div className="lg:col-span-6 relative min-h-[420px] md:min-h-[560px]">
+      {/* ==================== A Community Where Everyone Belongs ==================== */}
+      <section className="w-full bg-white py-14 md:py-20">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-6">
             <img
               src={m8}
-              alt="Friends in the hallway"
-              className="absolute inset-0 w-full h-full object-cover"
+              alt="Community & belonging"
+              className="w-full h-full object-cover min-h-[420px]"
             />
           </div>
-
-          {/* Right: heading + underline + paragraph */}
-          <div className="lg:col-span-6 flex flex-col justify-center">
-            <h2 className="font-serif text-[30px] md:text-[40px] leading-tight text-gray-900">
-              A Community Where
-              <br className="hidden md:block" /> Everyone Belongs
-            </h2>
-
-            <div className="mt-6 h-[3px] w-40 bg-red-600" />
-
-            <div className="mt-8 text-[18px] leading-8 text-gray-800 space-y-6">
-              <p>
+          <div className="lg:col-span-6 flex items-center">
+            <div>
+              <h2 className="font-serif text-[34px] md:text-[44px] leading-tight text-gray-900">
+                A Community Where <br /> Everyone Belongs
+              </h2>
+              <div className="mt-4 h-[3px] w-52 bg-red-600" />
+              <p className="mt-8 text-[18px] leading-8 text-gray-800">
                 Middle School is a time when students begin to develop a greater
                 sense of their own identity while learning to value each other.
                 They are taught to affirm and uplift one another, to listen
                 intently and deeply, and to have respectful conversations across
-                differences. From our numerous affinity groups and clubs, to
-                health and wellness classes and peer-led groups, Middle School
-                students are given abundant opportunities to grow socially and
-                emotionally, ultimately preparing them to be part of a community
-                of mutual concern and support.
+                differences. Numerous affinity groups and clubs, health and
+                wellness classes, and peer-led groups provide abundant
+                opportunities to grow socially and emotionally, preparing
+                students to be part of a community of mutual concern and
+                support.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== Class V Curriculum ==================== */}
+      <section className="w-full bg-white py-16 md:py-24">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10">
+          <h2 className="font-serif text-[34px] md:text-[48px] text-gray-900">
+            Class V Curriculum
+          </h2>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14">
+            {/* ---- Left column ---- */}
+            <div className="space-y-12">
+              <CurriculumBlock
+                title="English"
+                text={
+                  <>
+                    Composition, creative writing, grammar and spelling;{" "}
+                    <em>The Witch of Blackbird Pond</em>, <em>Prairie Lotus</em>
+                    , <em>Hurricane Dancers</em>; short stories and poetry in
+                    connection with work in United States history.
+                  </>
+                }
+              />
+              <CurriculumBlock
+                title="History"
+                text="The early history of the United States through 1790; related work in English; introduction to global geography."
+              />
+              <CurriculumBlock
+                title="Modern Languages"
+                text="Students begin their exploration of either French or Spanish language and culture or continue with their study of Mandarin."
+                linkLabel="Modern Language Choices"
+              />
+              <CurriculumBlock
+                title="Drama"
+                text="Exploration of the craft of acting through the rehearsal and performance of an adapted play by Shakespeare at an assembly in the spring."
+              />
+              <CurriculumBlock
+                title="Studio Art"
+                text="Large group observational drawing sessions and, in small groups, rotation through three courses, each of which takes place over ten weeks."
+                linkLabel="Class V Art Mini-Courses"
+              />
+              <CurriculumBlock
+                title="Technology"
+                text="In small groups, students rotate through three ten-week courses using the Snap programming language."
+                linkLabel="Technology Mini-Courses"
+              />
+              <CurriculumBlock
+                title="Athletics"
+                text="Middle School Sports V–VIII is the introductory level of competitive sports at Marefat, focusing on skill building, teamwork and sportsmanship."
+              />
+            </div>
+
+            {/* ---- Right column ---- */}
+            <div className="space-y-12">
+              <CurriculumBlock
+                title="Mathematics"
+                text="Development of number sense; computation with whole and rational numbers; data analysis and graphs; geometry; perimeter, area & volume; applications & problem-solving."
+              />
+              <CurriculumBlock
+                title="Science"
+                text="Exploration of electricity; wiring a household circuit; properties of matter; physical & chemical changes; chemistry; simple machines; sinking & floating."
+              />
+              <CurriculumBlock
+                title="Reading and Writing Practicum"
+                text="Two-year sequence for students who benefit from practice in expository writing; close reading; outlining; research and oral presentation."
+              />
+              <CurriculumBlock
+                title="Music"
+                text="Singing, solfège, theory fundamentals and group instrumental instruction; participation in ensembles and performances."
+              />
+              <CurriculumBlock
+                title="Library"
+                text="Development of personal reading taste through stories read aloud; pleasure reading; research skills via student projects; graphic-storytelling study."
+              />
+              <CurriculumBlock
+                title="Physical Education"
+                text="Progression from motor skills to sport-specific skills in increasingly complex game contexts; emphasis on SEL, collaboration, and sportsmanship."
+              />
+              <CurriculumBlock
+                title="Health"
+                text="Wellness themes integrated into advisory; human sexuality, substance abuse prevention, safety; age-appropriate national standards; self-defense classes."
+              />
             </div>
           </div>
         </div>
       </section>
     </main>
+  );
+}
+
+/* ---------- Small helper for curriculum blocks ---------- */
+function CurriculumBlock({ title, text, linkLabel }) {
+  return (
+    <div>
+      <h3 className="font-serif text-[26px] text-gray-900">{title}</h3>
+      <div className="mt-2 h-[3px] w-12 bg-red-600" />
+      <p className="mt-4 text-[17px] leading-8 text-gray-800">{text}</p>
+      {linkLabel ? (
+        <div className="mt-3">
+          <span className="text-red-700 text-[15px] hover:underline cursor-pointer inline-flex items-center gap-2">
+            {linkLabel}
+            <span aria-hidden>›</span>
+          </span>
+        </div>
+      ) : null}
+    </div>
   );
 }
