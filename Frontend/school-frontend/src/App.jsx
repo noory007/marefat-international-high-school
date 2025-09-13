@@ -1,3 +1,4 @@
+// src/App.jsx
 import {
   BrowserRouter as Router,
   Routes,
@@ -26,13 +27,13 @@ import ApplyLower from "./pages/Admission/ApplyLower";
 import ApplyMiddle from "./pages/Admission/ApplyMiddle";
 import ApplyUpper from "./pages/Admission/ApplyUpper";
 
-// The Latest (make sure these paths exist exactly)
+// The Latest
 import TheLatest from "./pages/TheLatest/TheLatest";
 import News from "./pages/TheLatest/News";
 import Bulletin from "./pages/TheLatest/Bulletin";
 import Calendar from "./pages/TheLatest/Calendar";
 import AdmissionEvents from "./pages/TheLatest/AdmissionEvents";
-//import AlumniEvents from "./pages/TheLatest/AlumniEvents";
+import AlumniEvents from "./pages/TheLatest/AlumniEvents"; // <-- IMPORTANT: file name is AlumniEvents.jsx
 
 // Other
 import Alumni from "./pages/Alumni/Alumni";
@@ -78,8 +79,8 @@ export default function App() {
         <Route path="/latest/bulletin" element={<Bulletin />} />
         <Route path="/latest/calendar" element={<Calendar />} />
         <Route path="/latest/admission-events" element={<AdmissionEvents />} />
-        {/* <Route path="/latest/alumni-events" element={<AlumniEvents />} /> */}
-        {/* If you ever had the old alumnae path, keep a redirect */}
+        <Route path="/latest/alumni-events" element={<AlumniEvents />} />
+        {/* Backwards-compatible redirect for the old spelling */}
         <Route
           path="/latest/alumnae-events"
           element={<Navigate to="/latest/alumni-events" replace />}
