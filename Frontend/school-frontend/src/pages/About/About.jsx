@@ -11,12 +11,12 @@ export default function About() {
     "Welcome to Marefat",
     "Our People",
     "Our Mission",
-    "History & Traditions",
-    "Virtual Tour",
-    "Faculty & Staff Directory",
-    "Strategic Vision",
-    "Marefat at a Glance",
-    "Diversity, Equity, Inclusion & Antiracism",
+    // "History & Traditions",
+    // "Virtual Tour",
+    // "Faculty & Staff Directory",
+    // "Strategic Vision",
+    // "Marefat at a Glance",
+    // "Diversity, Equity, Inclusion & Antiracism",
   ];
 
   // Map each menu item to a slug if it has a real route; otherwise null.

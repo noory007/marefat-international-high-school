@@ -9,32 +9,32 @@ export default function ExperienceMarefat() {
 
   const categories = [
     {
-      title: "Academics",
+      // title: "Academics",
       items: ["Lower School", "Middle School", "Upper School"],
     },
-    {
-      title: "Student Life",
-      items: [
-        "Library",
-        "Middle School Clubs & Activities",
-        "Upper School Clubs & Activities",
-        "Counseling & Health Services",
-        "College Advising",
-      ],
-    },
-    {
-      title: "Arts",
-      items: ["Drama", "Music", "Visual Arts", "Dance"],
-    },
-    {
-      title: "Athletics",
-      items: [
-        "Overview",
-        "Teams & Schedules",
-        "Facilities",
-        "Athletic Training, Strength, & Conditioning",
-      ],
-    },
+    // {
+    //   title: "Student Life",
+    //   items: [
+    //     "Library",
+    //     "Middle School Clubs & Activities",
+    //     "Upper School Clubs & Activities",
+    //     "Counseling & Health Services",
+    //     "College Advising",
+    //   ],
+    // },
+    // {
+    //   title: "Arts",
+    //   items: ["Drama", "Music", "Visual Arts", "Dance"],
+    // },
+    // {
+    //   title: "Athletics",
+    //   items: [
+    //     "Overview",
+    //     "Teams & Schedules",
+    //     "Facilities",
+    //     "Athletic Training, Strength, & Conditioning",
+    //   ],
+    // },
   ];
 
   // Map labels to routes we’ve already wired up in App.jsx

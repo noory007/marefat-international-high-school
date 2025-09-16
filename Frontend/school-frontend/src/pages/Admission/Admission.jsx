@@ -14,9 +14,9 @@ export default function Admission() {
       { label: "Apply to Lower School", to: "/admission/apply/lower" },
       { label: "Apply to Middle School", to: "/admission/apply/middle" },
       { label: "Apply to Upper School", to: "/admission/apply/upper" },
-      { label: "Tuition and Financial Assistance", to: "/admission/tuition" },
-      { label: "Admission Events", to: "/admission/events" },
-      { label: "Admission FAQ", to: "/admission/faq" },
+      // { label: "Tuition and Financial Assistance", to: "/admission/tuition" },
+      // { label: "Admission Events", to: "/admission/events" },
+      // { label: "Admission FAQ", to: "/admission/faq" },
     ],
     []
   );

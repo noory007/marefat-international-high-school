@@ -12,8 +12,8 @@ export default function Alumni() {
     { label: "Alumni Association", path: "/alumni/association" },
     { label: "Alumni Stories", path: "/alumni/stories" },
     { label: "Alumni Events", path: "/alumni/events" },
-    { label: "Alumni Awards", path: "/alumni/awards" },
-    { label: "Directory & Networking", path: "/alumni/directory" },
+    // { label: "Alumni Awards", path: "/alumni/awards" },
+    // { label: "Directory & Networking", path: "/alumni/directory" },
   ];
 
   const go = (i, path) => {
