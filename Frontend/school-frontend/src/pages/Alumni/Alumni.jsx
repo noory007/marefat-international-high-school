@@ -1,4 +1,4 @@
-// src/pages/Alumni.jsx
+// src/pages/Alumni/Alumni.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import heroImage from "../../assets/images/Alumni.png";
@@ -7,19 +7,24 @@ export default function Alumni() {
   const navigate = useNavigate();
   const [active, setActive] = useState(null);
 
+  // label + route path for each item (plain JS)
   const items = [
-    "Alumni Association",
-    "Alumni Stories",
-    "Alumni Events",
-    "Alumni Awards",
-    "Directory & Networking",
+    { label: "Alumni Association", path: "/alumni/association" },
+    { label: "Alumni Stories", path: "/alumni/stories" },
+    { label: "Alumni Events", path: "/alumni/events" },
+    { label: "Alumni Awards", path: "/alumni/awards" },
+    { label: "Directory & Networking", path: "/alumni/directory" },
   ];
+
+  const go = (i, path) => {
+    setActive(i);
+    navigate(path);
+  };
 
   return (
     <section className="flex flex-col md:flex-row bg-red-700 min-h-screen">
       {/* Left: hero image (fills the column) */}
       <div className="relative w-full md:w-2/3 min-h-[78vh]">
-        {/* Make the image fill the entire column */}
         <img
           src={heroImage}
           alt="Alumni"
@@ -48,17 +53,21 @@ export default function Alumni() {
         </button>
 
         <ul className="space-y-3 text-lg">
-          {items.map((label, i) => (
-            <li
-              key={label}
-              onClick={() => setActive(i)}
-              className={`cursor-pointer select-none transition-colors ${
-                active === i
-                  ? "text-red-700 font-semibold"
-                  : "text-gray-800 hover:text-red-400"
-              }`}
-            >
-              {label}
+          {items.map(({ label, path }, i) => (
+            <li key={label}>
+              <button
+                onClick={() => go(i, path)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") go(i, path);
+                }}
+                className={`w-full text-left transition-colors ${
+                  active === i
+                    ? "text-red-700 font-semibold"
+                    : "text-gray-800 hover:text-red-400"
+                }`}
+              >
+                {label}
+              </button>
             </li>
           ))}
         </ul>

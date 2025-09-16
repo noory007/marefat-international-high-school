@@ -33,10 +33,15 @@ import News from "./pages/TheLatest/News";
 import Bulletin from "./pages/TheLatest/Bulletin";
 import Calendar from "./pages/TheLatest/Calendar";
 import AdmissionEvents from "./pages/TheLatest/AdmissionEvents";
-import AlumniEvents from "./pages/TheLatest/AlumniEvents"; // <-- IMPORTANT: file name is AlumniEvents.jsx
+import AlumniEvents from "./pages/TheLatest/AlumniEvents";
 
-// Other
+// Alumni
 import Alumni from "./pages/Alumni/Alumni";
+import Association from "./pages/Alumni/Association";
+//import Awards from "./pages/Alumni/Awards";
+//import Directory from "./pages/Alumni/Directory";
+import Events from "./pages/Alumni/Events";
+import Stories from "./pages/Alumni/Stories";
 
 export default function App() {
   return (
@@ -86,8 +91,36 @@ export default function App() {
           element={<Navigate to="/latest/alumni-events" replace />}
         />
 
-        {/* Other */}
+        {/* Alumni (tab + nested pages) */}
         <Route path="/alumni" element={<Alumni />} />
+        <Route path="/alumni/association" element={<Association />} />
+        <Route path="/alumni/stories" element={<Stories />} />
+        <Route path="/alumni/events" element={<Events />} />
+        {/* <Route path="/alumni/awards" element={<Awards />} />
+        <Route path="/alumni/directory" element={<Directory />} /> */}
+
+        {/* Legacy redirects (optional but handy) */}
+        <Route path="/alumnae" element={<Navigate to="/alumni" replace />} />
+        <Route
+          path="/alumnae/association"
+          element={<Navigate to="/alumni/association" replace />}
+        />
+        <Route
+          path="/alumnae/stories"
+          element={<Navigate to="/alumni/stories" replace />}
+        />
+        <Route
+          path="/alumnae/events"
+          element={<Navigate to="/alumni/events" replace />}
+        />
+        <Route
+          path="/alumnae/awards"
+          element={<Navigate to="/alumni/awards" replace />}
+        />
+        <Route
+          path="/alumnae/directory"
+          element={<Navigate to="/alumni/directory" replace />}
+        />
       </Routes>
     </Router>
   );
