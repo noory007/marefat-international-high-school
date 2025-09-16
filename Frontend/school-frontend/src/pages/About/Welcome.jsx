@@ -1,6 +1,7 @@
 // src/pages/About/Welcome.jsx
 import heroImage from "../../assets/images/WelcometoMarefat.png";
 import headshot from "../../assets/images/AZIZULLAH-ROYESH.png";
+import Footer from "../../components/Footer"; // <-- added
 
 export default function Welcome() {
   return (
@@ -90,6 +91,9 @@ export default function Welcome() {
           </div>
         </div>
       </section>
+
+      {/* === FOOTER (added, no other code touched) === */}
+      <Footer />
     </main>
   );
 }
