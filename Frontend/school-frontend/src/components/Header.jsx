@@ -25,11 +25,6 @@ export default function Header() {
         <Link to="/alumni" className="hover:text-gray-200">
           Alumni
         </Link>
-        <Link to="/giving" className="hover:text-gray-200">
-          Giving
-        </Link>
-        <span className="ml-4 hover:cursor-pointer">👤</span>
-        <span className="ml-4 hover:cursor-pointer">🔍</span>
       </nav>
     </header>
   );
